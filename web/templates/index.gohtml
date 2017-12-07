@@ -1,0 +1,29 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Choose Your Own Adventure</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="story">
+            <div class="story-header">
+                <h1> {{ .Title }} </h1>
+            <div>
+            <div class="story-body">
+                {{ range .Paragraphs }}
+                    <p> {{ . }} </p>
+                {{ end}}
+            </div>
+            <div class="story-options">
+                <ul>
+                    {{ range .Options }}
+                        <li> <a href="/{{ .Arc }}"> {{ .Text }}</a> </li>
+                    {{ end}}
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
